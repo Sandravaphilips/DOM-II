@@ -9,9 +9,4 @@ function mouseOver (dest) {
 destination.forEach((dest) => mouseOver(dest));
 
 // KEYDOWN
-function keyDown (text) {
-    text.style[font-family] = '150%';
-}
-
-let textContent = document.querySelector('.text-content');
-textContent.addEventListener('keydown', keyDown);
+document.addEventListener('keydown', ()=> console.log('Well done!'));
