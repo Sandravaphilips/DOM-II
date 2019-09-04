@@ -8,7 +8,11 @@ function mouseOver (dest) {
 
 destination.forEach((dest) => mouseOver(dest));
 
-document.querySelector('.content-pick').stopPropagation();
+const destinationSection = document.querySelector('.content-pick');
+function stopPropagation(event) {
+    event.stopPropagation();
+}
+destinationSection.onclick = stopPropagation;
 
 // KEYDOWN
 document.addEventListener('keydown', ()=> console.log('Well done!'));
@@ -63,4 +67,7 @@ window.addEventListener('scroll', ()=> console.log('You have just scrolled up or
 let button = document.querySelector('.btn');
 button.addEventListener('dblclick', ()=>button.style.display = 'none' );
 
-document.querySelector('nav a').preventDefault();
+const navigation = document.querySelector('.nav');
+navigation.onclick = function preventDefault(event) {
+    event.preventDefault();
+}
